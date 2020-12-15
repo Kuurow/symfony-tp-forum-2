@@ -21,17 +21,17 @@
                 <td>{{ message.texte }}</td>
                 <td>{{ message.date ? message.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('message_show', {'id': message.id}) }}">show</a>
-                    <a href="{{ path('message_edit', {'id': message.id}) }}">edit</a>
+                    <a href="{{ path('message_show', {'id': message.id}) }}" class="btn btn-info my-2">Show</a>
+                    <a href="{{ path('message_edit', {'id': message.id}) }}" class="btn btn-dark my-2">Edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun message trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('message_new') }}">Create new</a>
+    <a href="{{ path('message_new') }}" class="btn btn-primary my-2">Create new</a>
 {% endblock %}

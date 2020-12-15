@@ -10,7 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Pseudo</th>
-                <th>Passwd</th>
                 <th>Date</th>
                 <th>About</th>
                 <th>actions</th>
@@ -21,21 +20,20 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.pseudo }}</td>
-                <td>{{ user.passwd }}</td>
                 <td>{{ user.date ? user.date|date('Y-m-d') : '' }}</td>
                 <td>{{ user.about }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-info my-0">Show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-secondary my-0">Edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun utilisateur trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <a href="{{ path('user_new') }}" class="btn btn-primary my-2">Create new</a>
 {% endblock %}
