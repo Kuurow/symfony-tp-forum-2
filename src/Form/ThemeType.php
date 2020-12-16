@@ -6,6 +6,7 @@ use App\Entity\Theme;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
 class ThemeType extends AbstractType
 {
@@ -13,7 +14,7 @@ class ThemeType extends AbstractType
     {
         $builder
             ->add('sujet')
-            ->add('date')
+            ->add('date', BirthdayType::class)
             ->add('user')
         ;
     }

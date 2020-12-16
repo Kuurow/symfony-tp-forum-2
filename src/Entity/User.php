@@ -23,7 +23,7 @@ class User
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $pseudo;
+    public $pseudo;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -167,5 +167,10 @@ class User
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return  $this->pseudo;
     }
 }
